@@ -1,1 +1,1101 @@
-{"@context": "http://schemas.frictionlessdata.io/fiscal-data-package.jsonld", "bytes": 1082465890, "count_of_rows": 1546445, "hash": "d1fff7e7143abca63b514f9002df0bef", "model": {"dimensions": {"activity": {"attributes": {"PROGRAM1": {"source": "PROGRAM1", "title": "Programa"}, "PROGRAM2": {"parent": "PROGRAM1", "source": "PROGRAM2", "title": "Sub-Programa"}, "PROJECT1": {"parent": "PROGRAM2", "source": "PROJECT1", "title": "Proyecto"}, "PROJECT2": {"parent": "PROJECT1", "source": "PROJECT2", "title": "Actividad Obra"}}, "dimensionType": "activity", "primaryKey": ["PROGRAM1", "PROGRAM2", "PROJECT1", "PROJECT2"]}, "administrative-classification": {"attributes": {"ADMIN1": {"source": "ADMIN1", "title": "Gobierno Central"}, "ADMIN2": {"parent": "ADMIN1", "source": "ADMIN2", "title": "Entidad"}, "ADMIN3": {"parent": "ADMIN2", "source": "ADMIN3", "title": "Unidad Ejecutora"}}, "classificationType": "administrative", "dimensionType": "classification", "primaryKey": ["ADMIN1", "ADMIN2", "ADMIN3"]}, "date": {"attributes": {"YEAR": {"source": "YEAR", "title": "YEAR"}}, "dimensionType": "datetime", "primaryKey": ["YEAR"]}, "economic-classification": {"attributes": {"ECON1": {"source": "ECON1", "title": "Nivel 2: Econ\u00f3mico"}, "ECON2": {"parent": "ECON1", "source": "ECON2", "title": "Nivel 3: Econ\u00f3mico"}, "ECON3": {"parent": "ECON2", "source": "ECON3", "title": "Nivel 4: Econ\u00f3mico"}, "ECON4": {"parent": "ECON3", "source": "ECON4", "title": "Nivel 5: Econ\u00f3mico"}, "ECON5": {"parent": "ECON4", "source": "ECON5", "title": "Grupo"}, "ECON6": {"parent": "ECON5", "source": "ECON6", "title": "Sub-grupo"}, "ECON7": {"parent": "ECON6", "source": "ECON7", "title": "Regl\u00f3n"}}, "classificationType": "economic", "dimensionType": "classification", "primaryKey": ["ECON1", "ECON2", "ECON3", "ECON4", "ECON5", "ECON6", "ECON7"]}, "fin-source": {"attributes": {"SOURCE_FN1": {"source": "SOURCE_FN1", "title": "Fuente agregada de financiamiento"}, "SOURCE_FN2": {"parent": "SOURCE_FN1", "source": "SOURCE_FN2", "title": "Fuente de financiamiento"}, "SOURCE_FN3": {"parent": "SOURCE_FN2", "source": "SOURCE_FN3", "title": "Organismo"}}, "dimensionType": "other", "primaryKey": ["SOURCE_FN1", "SOURCE_FN2", "SOURCE_FN3"]}, "functional-classification": {"attributes": {"FUNC1": {"source": "FUNC1", "title": "Finalidad"}, "FUNC2": {"parent": "FUNC1", "source": "FUNC2", "title": "Funci\u00f3n"}, "FUNC3": {"parent": "FUNC2", "source": "FUNC3", "title": "Divisi\u00f3n"}}, "classificationType": "functional", "dimensionType": "classification", "primaryKey": ["FUNC1", "FUNC2", "FUNC3"]}, "geo-source": {"attributes": {"GEO1": {"source": "GEO1", "title": "Departamento"}, "GEO2": {"parent": "GEO1", "source": "GEO2", "title": "Municipio"}}, "dimensionType": "location", "primaryKey": ["GEO1", "GEO2"]}, "phase": {"attributes": {"PHASE": {"labelfor": "PHASE_ID", "source": "PHASE", "title": "PHASE"}, "PHASE_ID": {"source": "PHASE_ID", "title": "PHASE_ID"}}, "dimensionType": "other", "primaryKey": ["PHASE_ID"]}}, "measures": {"value": {"currency": "GTQ", "source": "value", "title": "value"}, "value_USD": {"currency": "USD", "source": "value_USD", "title": "value (USD)"}}}, "name": "boost-guatemala-central", "profiles": {"fiscal": "*", "tabular": "*"}, "resources": [{"bytes": 1082465890, "count_of_rows": 1546445, "dialect": {"delimiter": ",", "doubleQuote": true, "lineTerminator": "\r\n", "quoteChar": "\"", "skipInitialSpace": false}, "dpp:streaming": true, "encoding": "utf-8", "format": "csv", "hash": "817a8889f5bb72658fbb36dbfc997977", "mediatype": "text/csv", "name": "boost-guatemala-central", "path": "data/boost-guatemala-central.csv", "schema": {"fields": [{"conceptType": "date", "format": "default", "name": "YEAR", "osType": "date:fiscal-year", "slug": "YEAR", "title": "YEAR", "type": "integer"}, {"conceptType": "administrative-classification", "format": "default", "name": "ADMIN1", "osType": "administrative-classification:generic:level1:code", "slug": "ADMIN1", "title": "Gobierno Central", "type": "string"}, {"conceptType": "administrative-classification", "format": "default", "name": "ADMIN2", "osType": "administrative-classification:generic:level2:code:full", "slug": "ADMIN2", "title": "Entidad", "type": "string"}, {"conceptType": "administrative-classification", "format": "default", "name": "ADMIN3", "osType": "administrative-classification:generic:level3:code:full", "slug": "ADMIN3", "title": "Unidad Ejecutora", "type": "string"}, {"conceptType": "geo-source", "format": "default", "name": "GEO1", "osType": "geo-source:target:level1:code", "slug": "GEO1", "title": "Departamento", "type": "string"}, {"conceptType": "geo-source", "format": "default", "name": "GEO2", "osType": "geo-source:target:level2:code:full", "slug": "GEO2", "title": "Municipio", "type": "string"}, {"conceptType": "functional-classification", "format": "default", "name": "FUNC1", "osType": "functional-classification:generic:level1:code", "slug": "FUNC1", "title": "Finalidad", "type": "string"}, {"conceptType": "functional-classification", "format": "default", "name": "FUNC2", "osType": "functional-classification:generic:level2:code:full", "slug": "FUNC2", "title": "Funci\u00f3n", "type": "string"}, {"conceptType": "functional-classification", "format": "default", "name": "FUNC3", "osType": "functional-classification:generic:level3:code:full", "slug": "FUNC3", "title": "Divisi\u00f3n", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON1", "osType": "economic-classification:generic:level1:code", "slug": "ECON1", "title": "Nivel 2: Econ\u00f3mico", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON2", "osType": "economic-classification:generic:level2:code:full", "slug": "ECON2", "title": "Nivel 3: Econ\u00f3mico", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON3", "osType": "economic-classification:generic:level3:code:full", "slug": "ECON3", "title": "Nivel 4: Econ\u00f3mico", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON4", "osType": "economic-classification:generic:level4:code:full", "slug": "ECON4", "title": "Nivel 5: Econ\u00f3mico", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON5", "osType": "economic-classification:generic:level5:code:full", "slug": "ECON5", "title": "Grupo", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON6", "osType": "economic-classification:generic:level6:code:full", "slug": "ECON6", "title": "Sub-grupo", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON7", "osType": "economic-classification:generic:level7:code:full", "slug": "ECON7", "title": "Regl\u00f3n", "type": "string"}, {"conceptType": "fin-source", "format": "default", "name": "SOURCE_FN1", "osType": "fin-source:generic:level1:code", "slug": "SOURCE_FN1", "title": "Fuente agregada de financiamiento", "type": "string"}, {"conceptType": "fin-source", "format": "default", "name": "SOURCE_FN2", "osType": "fin-source:generic:level2:code:full", "slug": "SOURCE_FN2", "title": "Fuente de financiamiento", "type": "string"}, {"conceptType": "fin-source", "format": "default", "name": "SOURCE_FN3", "osType": "fin-source:generic:level3:code:full", "slug": "SOURCE_FN3", "title": "Organismo", "type": "string"}, {"conceptType": "activity", "format": "default", "name": "PROGRAM1", "osType": "activity:generic:program:code", "slug": "PROGRAM1", "title": "Programa", "type": "string"}, {"conceptType": "activity", "format": "default", "name": "PROGRAM2", "osType": "activity:generic:subprogram:code:full", "slug": "PROGRAM2", "title": "Sub-Programa", "type": "string"}, {"conceptType": "activity", "format": "default", "name": "PROJECT1", "osType": "activity:generic:project:code:full", "slug": "PROJECT1", "title": "Proyecto", "type": "string"}, {"conceptType": "activity", "format": "default", "name": "PROJECT2", "osType": "activity:generic:subproject:code:full", "slug": "PROJECT2", "title": "Actividad Obra", "type": "string"}, {"conceptType": "phase", "format": "default", "name": "PHASE", "osType": "phase:label", "slug": "PHASE", "title": "PHASE", "type": "string"}, {"conceptType": "phase", "format": "default", "name": "PHASE_ID", "osType": "phase:id", "slug": "PHASE_ID", "title": "PHASE_ID", "type": "string"}, {"conceptType": "value", "decimalChar": ".", "format": "default", "groupChar": "", "name": "value", "osType": "value", "slug": "value", "title": "value", "type": "number"}, {"conceptType": "value", "decimalChar": ".", "format": "default", "groupChar": "", "name": "value_USD", "osType": "value", "slug": "value_USD", "title": "value (USD)", "type": "number"}], "primaryKey": ["YEAR", "ADMIN1", "ADMIN2", "ADMIN3", "GEO1", "GEO2", "FUNC1", "FUNC2", "FUNC3", "ECON1", "ECON2", "ECON3", "ECON4", "ECON5", "ECON6", "ECON7", "SOURCE_FN1", "SOURCE_FN2", "SOURCE_FN3", "PROGRAM1", "PROGRAM2", "PROJECT1", "PROJECT2", "PHASE_ID"]}, "profile": "data-resource"}, {"dialect": {"delimiter": ",", "doubleQuote": true, "lineTerminator": "\r\n", "quoteChar": "\"", "skipInitialSpace": false, "escapeChar": "\\", "header": true, "caseSensitiveHeader": false}, "dpp:streaming": true, "encoding": "utf-8", "format": "csv", "mediatype": "text/csv", "schema": {"fields": [{"conceptType": "date", "format": "default", "name": "YEAR", "osType": "date:fiscal-year", "slug": "YEAR", "title": "YEAR", "type": "integer"}, {"conceptType": "administrative-classification", "format": "default", "name": "ADMIN1", "osType": "administrative-classification:generic:level1:code", "slug": "ADMIN1", "title": "Gobierno Central", "type": "string"}, {"conceptType": "administrative-classification", "format": "default", "name": "ADMIN2", "osType": "administrative-classification:generic:level2:code:full", "slug": "ADMIN2", "title": "Entidad", "type": "string"}, {"conceptType": "administrative-classification", "format": "default", "name": "ADMIN3", "osType": "administrative-classification:generic:level3:code:full", "slug": "ADMIN3", "title": "Unidad Ejecutora", "type": "string"}, {"conceptType": "geo-source", "format": "default", "name": "GEO1", "osType": "geo-source:target:level1:code", "slug": "GEO1", "title": "Departamento", "type": "string"}, {"conceptType": "geo-source", "format": "default", "name": "GEO2", "osType": "geo-source:target:level2:code:full", "slug": "GEO2", "title": "Municipio", "type": "string"}, {"conceptType": "functional-classification", "format": "default", "name": "FUNC1", "osType": "functional-classification:generic:level1:code", "slug": "FUNC1", "title": "Finalidad", "type": "string"}, {"conceptType": "functional-classification", "format": "default", "name": "FUNC2", "osType": "functional-classification:generic:level2:code:full", "slug": "FUNC2", "title": "Funci\u00f3n", "type": "string"}, {"conceptType": "functional-classification", "format": "default", "name": "FUNC3", "osType": "functional-classification:generic:level3:code:full", "slug": "FUNC3", "title": "Divisi\u00f3n", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON1", "osType": "economic-classification:generic:level1:code", "slug": "ECON1", "title": "Nivel 2: Econ\u00f3mico", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON2", "osType": "economic-classification:generic:level2:code:full", "slug": "ECON2", "title": "Nivel 3: Econ\u00f3mico", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON3", "osType": "economic-classification:generic:level3:code:full", "slug": "ECON3", "title": "Nivel 4: Econ\u00f3mico", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON4", "osType": "economic-classification:generic:level4:code:full", "slug": "ECON4", "title": "Nivel 5: Econ\u00f3mico", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON5", "osType": "economic-classification:generic:level5:code:full", "slug": "ECON5", "title": "Grupo", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON6", "osType": "economic-classification:generic:level6:code:full", "slug": "ECON6", "title": "Sub-grupo", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON7", "osType": "economic-classification:generic:level7:code:full", "slug": "ECON7", "title": "Regl\u00f3n", "type": "string"}, {"conceptType": "fin-source", "format": "default", "name": "SOURCE_FN1", "osType": "fin-source:generic:level1:code", "slug": "SOURCE_FN1", "title": "Fuente agregada de financiamiento", "type": "string"}, {"conceptType": "fin-source", "format": "default", "name": "SOURCE_FN2", "osType": "fin-source:generic:level2:code:full", "slug": "SOURCE_FN2", "title": "Fuente de financiamiento", "type": "string"}, {"conceptType": "fin-source", "format": "default", "name": "SOURCE_FN3", "osType": "fin-source:generic:level3:code:full", "slug": "SOURCE_FN3", "title": "Organismo", "type": "string"}, {"conceptType": "activity", "format": "default", "name": "PROGRAM1", "osType": "activity:generic:program:code", "slug": "PROGRAM1", "title": "Programa", "type": "string"}, {"conceptType": "activity", "format": "default", "name": "PROGRAM2", "osType": "activity:generic:subprogram:code:full", "slug": "PROGRAM2", "title": "Sub-Programa", "type": "string"}, {"conceptType": "activity", "format": "default", "name": "PROJECT1", "osType": "activity:generic:project:code:full", "slug": "PROJECT1", "title": "Proyecto", "type": "string"}, {"conceptType": "activity", "format": "default", "name": "PROJECT2", "osType": "activity:generic:subproject:code:full", "slug": "PROJECT2", "title": "Actividad Obra", "type": "string"}, {"conceptType": "phase", "format": "default", "name": "PHASE", "osType": "phase:label", "slug": "PHASE", "title": "PHASE", "type": "string"}, {"conceptType": "phase", "format": "default", "name": "PHASE_ID", "osType": "phase:id", "slug": "PHASE_ID", "title": "PHASE_ID", "type": "string"}, {"conceptType": "value", "decimalChar": ".", "format": "default", "groupChar": "", "name": "value", "osType": "value", "slug": "value", "title": "value", "type": "number"}, {"conceptType": "value", "decimalChar": ".", "format": "default", "groupChar": "", "name": "value_USD", "osType": "value", "slug": "value_USD", "title": "value (USD)", "type": "number"}], "primaryKey": ["YEAR", "ADMIN1", "ADMIN2", "ADMIN3", "GEO1", "GEO2", "FUNC1", "FUNC2", "FUNC3", "ECON1", "ECON2", "ECON3", "ECON4", "ECON5", "ECON6", "ECON7", "SOURCE_FN1", "SOURCE_FN2", "SOURCE_FN3", "PROGRAM1", "PROGRAM2", "PROJECT1", "PROJECT2", "PHASE_ID"], "missingValues": [""]}, "profile": "tabular-data-resource", "name": "2015", "path": "data/2015.csv", "count_of_rows": 752260}, {"dialect": {"delimiter": ",", "doubleQuote": true, "lineTerminator": "\r\n", "quoteChar": "\"", "skipInitialSpace": false, "escapeChar": "\\", "header": true, "caseSensitiveHeader": false}, "dpp:streaming": true, "encoding": "utf-8", "format": "csv", "mediatype": "text/csv", "schema": {"fields": [{"conceptType": "date", "format": "default", "name": "YEAR", "osType": "date:fiscal-year", "slug": "YEAR", "title": "YEAR", "type": "integer"}, {"conceptType": "administrative-classification", "format": "default", "name": "ADMIN1", "osType": "administrative-classification:generic:level1:code", "slug": "ADMIN1", "title": "Gobierno Central", "type": "string"}, {"conceptType": "administrative-classification", "format": "default", "name": "ADMIN2", "osType": "administrative-classification:generic:level2:code:full", "slug": "ADMIN2", "title": "Entidad", "type": "string"}, {"conceptType": "administrative-classification", "format": "default", "name": "ADMIN3", "osType": "administrative-classification:generic:level3:code:full", "slug": "ADMIN3", "title": "Unidad Ejecutora", "type": "string"}, {"conceptType": "geo-source", "format": "default", "name": "GEO1", "osType": "geo-source:target:level1:code", "slug": "GEO1", "title": "Departamento", "type": "string"}, {"conceptType": "geo-source", "format": "default", "name": "GEO2", "osType": "geo-source:target:level2:code:full", "slug": "GEO2", "title": "Municipio", "type": "string"}, {"conceptType": "functional-classification", "format": "default", "name": "FUNC1", "osType": "functional-classification:generic:level1:code", "slug": "FUNC1", "title": "Finalidad", "type": "string"}, {"conceptType": "functional-classification", "format": "default", "name": "FUNC2", "osType": "functional-classification:generic:level2:code:full", "slug": "FUNC2", "title": "Funci\u00f3n", "type": "string"}, {"conceptType": "functional-classification", "format": "default", "name": "FUNC3", "osType": "functional-classification:generic:level3:code:full", "slug": "FUNC3", "title": "Divisi\u00f3n", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON1", "osType": "economic-classification:generic:level1:code", "slug": "ECON1", "title": "Nivel 2: Econ\u00f3mico", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON2", "osType": "economic-classification:generic:level2:code:full", "slug": "ECON2", "title": "Nivel 3: Econ\u00f3mico", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON3", "osType": "economic-classification:generic:level3:code:full", "slug": "ECON3", "title": "Nivel 4: Econ\u00f3mico", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON4", "osType": "economic-classification:generic:level4:code:full", "slug": "ECON4", "title": "Nivel 5: Econ\u00f3mico", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON5", "osType": "economic-classification:generic:level5:code:full", "slug": "ECON5", "title": "Grupo", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON6", "osType": "economic-classification:generic:level6:code:full", "slug": "ECON6", "title": "Sub-grupo", "type": "string"}, {"conceptType": "economic-classification", "format": "default", "name": "ECON7", "osType": "economic-classification:generic:level7:code:full", "slug": "ECON7", "title": "Regl\u00f3n", "type": "string"}, {"conceptType": "fin-source", "format": "default", "name": "SOURCE_FN1", "osType": "fin-source:generic:level1:code", "slug": "SOURCE_FN1", "title": "Fuente agregada de financiamiento", "type": "string"}, {"conceptType": "fin-source", "format": "default", "name": "SOURCE_FN2", "osType": "fin-source:generic:level2:code:full", "slug": "SOURCE_FN2", "title": "Fuente de financiamiento", "type": "string"}, {"conceptType": "fin-source", "format": "default", "name": "SOURCE_FN3", "osType": "fin-source:generic:level3:code:full", "slug": "SOURCE_FN3", "title": "Organismo", "type": "string"}, {"conceptType": "activity", "format": "default", "name": "PROGRAM1", "osType": "activity:generic:program:code", "slug": "PROGRAM1", "title": "Programa", "type": "string"}, {"conceptType": "activity", "format": "default", "name": "PROGRAM2", "osType": "activity:generic:subprogram:code:full", "slug": "PROGRAM2", "title": "Sub-Programa", "type": "string"}, {"conceptType": "activity", "format": "default", "name": "PROJECT1", "osType": "activity:generic:project:code:full", "slug": "PROJECT1", "title": "Proyecto", "type": "string"}, {"conceptType": "activity", "format": "default", "name": "PROJECT2", "osType": "activity:generic:subproject:code:full", "slug": "PROJECT2", "title": "Actividad Obra", "type": "string"}, {"conceptType": "phase", "format": "default", "name": "PHASE", "osType": "phase:label", "slug": "PHASE", "title": "PHASE", "type": "string"}, {"conceptType": "phase", "format": "default", "name": "PHASE_ID", "osType": "phase:id", "slug": "PHASE_ID", "title": "PHASE_ID", "type": "string"}, {"conceptType": "value", "decimalChar": ".", "format": "default", "groupChar": "", "name": "value", "osType": "value", "slug": "value", "title": "value", "type": "number"}, {"conceptType": "value", "decimalChar": ".", "format": "default", "groupChar": "", "name": "value_USD", "osType": "value", "slug": "value_USD", "title": "value (USD)", "type": "number"}], "primaryKey": ["YEAR", "ADMIN1", "ADMIN2", "ADMIN3", "GEO1", "GEO2", "FUNC1", "FUNC2", "FUNC3", "ECON1", "ECON2", "ECON3", "ECON4", "ECON5", "ECON6", "ECON7", "SOURCE_FN1", "SOURCE_FN2", "SOURCE_FN3", "PROGRAM1", "PROGRAM2", "PROJECT1", "PROJECT2", "PHASE_ID"], "missingValues": [""]}, "profile": "tabular-data-resource", "name": "2014", "path": "data/2014.csv", "count_of_rows": 794185}], "title": "BOOST Guatemala Central", "profile": "data-package", "author": "OpenSpending", "owner": "6018ab87076187018fc29c94a68a3cd2"}
+{
+  "@context": "http://schemas.frictionlessdata.io/fiscal-data-package.jsonld",
+  "bytes": 1082465890,
+  "count_of_rows": 1546445,
+  "hash": "d1fff7e7143abca63b514f9002df0bef",
+  "model": {
+    "dimensions": {
+      "activity": {
+        "attributes": {
+          "PROGRAM1": {
+            "source": "PROGRAM1",
+            "title": "Programa"
+          },
+          "PROGRAM2": {
+            "parent": "PROGRAM1",
+            "source": "PROGRAM2",
+            "title": "Sub-Programa"
+          },
+          "PROJECT1": {
+            "parent": "PROGRAM2",
+            "source": "PROJECT1",
+            "title": "Proyecto"
+          },
+          "PROJECT2": {
+            "parent": "PROJECT1",
+            "source": "PROJECT2",
+            "title": "Actividad Obra"
+          }
+        },
+        "dimensionType": "activity",
+        "primaryKey": ["PROGRAM1", "PROGRAM2", "PROJECT1", "PROJECT2"]
+      },
+      "administrative-classification": {
+        "attributes": {
+          "ADMIN1": {
+            "source": "ADMIN1",
+            "title": "Gobierno Central"
+          },
+          "ADMIN2": {
+            "parent": "ADMIN1",
+            "source": "ADMIN2",
+            "title": "Entidad"
+          },
+          "ADMIN3": {
+            "parent": "ADMIN2",
+            "source": "ADMIN3",
+            "title": "Unidad Ejecutora"
+          }
+        },
+        "classificationType": "administrative",
+        "dimensionType": "classification",
+        "primaryKey": ["ADMIN1", "ADMIN2", "ADMIN3"]
+      },
+      "date": {
+        "attributes": {
+          "YEAR": {
+            "source": "YEAR",
+            "title": "YEAR"
+          }
+        },
+        "dimensionType": "datetime",
+        "primaryKey": ["YEAR"]
+      },
+      "economic-classification": {
+        "attributes": {
+          "ECON1": {
+            "source": "ECON1",
+            "title": "Nivel 2: Econ\u00f3mico"
+          },
+          "ECON2": {
+            "parent": "ECON1",
+            "source": "ECON2",
+            "title": "Nivel 3: Econ\u00f3mico"
+          },
+          "ECON3": {
+            "parent": "ECON2",
+            "source": "ECON3",
+            "title": "Nivel 4: Econ\u00f3mico"
+          },
+          "ECON4": {
+            "parent": "ECON3",
+            "source": "ECON4",
+            "title": "Nivel 5: Econ\u00f3mico"
+          },
+          "ECON5": {
+            "parent": "ECON4",
+            "source": "ECON5",
+            "title": "Grupo"
+          },
+          "ECON6": {
+            "parent": "ECON5",
+            "source": "ECON6",
+            "title": "Sub-grupo"
+          },
+          "ECON7": {
+            "parent": "ECON6",
+            "source": "ECON7",
+            "title": "Regl\u00f3n"
+          }
+        },
+        "classificationType": "economic",
+        "dimensionType": "classification",
+        "primaryKey": [
+          "ECON1",
+          "ECON2",
+          "ECON3",
+          "ECON4",
+          "ECON5",
+          "ECON6",
+          "ECON7"
+        ]
+      },
+      "fin-source": {
+        "attributes": {
+          "SOURCE_FN1": {
+            "source": "SOURCE_FN1",
+            "title": "Fuente agregada de financiamiento"
+          },
+          "SOURCE_FN2": {
+            "parent": "SOURCE_FN1",
+            "source": "SOURCE_FN2",
+            "title": "Fuente de financiamiento"
+          },
+          "SOURCE_FN3": {
+            "parent": "SOURCE_FN2",
+            "source": "SOURCE_FN3",
+            "title": "Organismo"
+          }
+        },
+        "dimensionType": "other",
+        "primaryKey": ["SOURCE_FN1", "SOURCE_FN2", "SOURCE_FN3"]
+      },
+      "functional-classification": {
+        "attributes": {
+          "FUNC1": {
+            "source": "FUNC1",
+            "title": "Finalidad"
+          },
+          "FUNC2": {
+            "parent": "FUNC1",
+            "source": "FUNC2",
+            "title": "Funci\u00f3n"
+          },
+          "FUNC3": {
+            "parent": "FUNC2",
+            "source": "FUNC3",
+            "title": "Divisi\u00f3n"
+          }
+        },
+        "classificationType": "functional",
+        "dimensionType": "classification",
+        "primaryKey": ["FUNC1", "FUNC2", "FUNC3"]
+      },
+      "geo-source": {
+        "attributes": {
+          "GEO1": {
+            "source": "GEO1",
+            "title": "Departamento"
+          },
+          "GEO2": {
+            "parent": "GEO1",
+            "source": "GEO2",
+            "title": "Municipio"
+          }
+        },
+        "dimensionType": "location",
+        "primaryKey": ["GEO1", "GEO2"]
+      },
+      "phase": {
+        "attributes": {
+          "PHASE": {
+            "labelfor": "PHASE_ID",
+            "source": "PHASE",
+            "title": "PHASE"
+          },
+          "PHASE_ID": {
+            "source": "PHASE_ID",
+            "title": "PHASE_ID"
+          }
+        },
+        "dimensionType": "other",
+        "primaryKey": ["PHASE_ID"]
+      }
+    },
+    "measures": {
+      "value": {
+        "currency": "GTQ",
+        "source": "value",
+        "title": "value"
+      },
+      "value_USD": {
+        "currency": "USD",
+        "source": "value_USD",
+        "title": "value (USD)"
+      }
+    }
+  },
+  "name": "boost-guatemala-central",
+  "profiles": {
+    "fiscal": "*",
+    "tabular": "*"
+  },
+  "resources": [
+    {
+      "bytes": 1082465890,
+      "count_of_rows": 1546445,
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false
+      },
+      "dpp:streaming": true,
+      "encoding": "utf-8",
+      "format": "csv",
+      "hash": "817a8889f5bb72658fbb36dbfc997977",
+      "mediatype": "text/csv",
+      "name": "boost-guatemala-central",
+      "path": "https://storage.openspending.org/boost-guatemala-central.csv",
+      "schema": {
+        "fields": [
+          {
+            "conceptType": "date",
+            "format": "default",
+            "name": "YEAR",
+            "osType": "date:fiscal-year",
+            "slug": "YEAR",
+            "title": "YEAR",
+            "type": "integer"
+          },
+          {
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "ADMIN1",
+            "osType": "administrative-classification:generic:level1:code",
+            "slug": "ADMIN1",
+            "title": "Gobierno Central",
+            "type": "string"
+          },
+          {
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "ADMIN2",
+            "osType": "administrative-classification:generic:level2:code:full",
+            "slug": "ADMIN2",
+            "title": "Entidad",
+            "type": "string"
+          },
+          {
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "ADMIN3",
+            "osType": "administrative-classification:generic:level3:code:full",
+            "slug": "ADMIN3",
+            "title": "Unidad Ejecutora",
+            "type": "string"
+          },
+          {
+            "conceptType": "geo-source",
+            "format": "default",
+            "name": "GEO1",
+            "osType": "geo-source:target:level1:code",
+            "slug": "GEO1",
+            "title": "Departamento",
+            "type": "string"
+          },
+          {
+            "conceptType": "geo-source",
+            "format": "default",
+            "name": "GEO2",
+            "osType": "geo-source:target:level2:code:full",
+            "slug": "GEO2",
+            "title": "Municipio",
+            "type": "string"
+          },
+          {
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "FUNC1",
+            "osType": "functional-classification:generic:level1:code",
+            "slug": "FUNC1",
+            "title": "Finalidad",
+            "type": "string"
+          },
+          {
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "FUNC2",
+            "osType": "functional-classification:generic:level2:code:full",
+            "slug": "FUNC2",
+            "title": "Funci\u00f3n",
+            "type": "string"
+          },
+          {
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "FUNC3",
+            "osType": "functional-classification:generic:level3:code:full",
+            "slug": "FUNC3",
+            "title": "Divisi\u00f3n",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON1",
+            "osType": "economic-classification:generic:level1:code",
+            "slug": "ECON1",
+            "title": "Nivel 2: Econ\u00f3mico",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON2",
+            "osType": "economic-classification:generic:level2:code:full",
+            "slug": "ECON2",
+            "title": "Nivel 3: Econ\u00f3mico",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON3",
+            "osType": "economic-classification:generic:level3:code:full",
+            "slug": "ECON3",
+            "title": "Nivel 4: Econ\u00f3mico",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON4",
+            "osType": "economic-classification:generic:level4:code:full",
+            "slug": "ECON4",
+            "title": "Nivel 5: Econ\u00f3mico",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON5",
+            "osType": "economic-classification:generic:level5:code:full",
+            "slug": "ECON5",
+            "title": "Grupo",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON6",
+            "osType": "economic-classification:generic:level6:code:full",
+            "slug": "ECON6",
+            "title": "Sub-grupo",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON7",
+            "osType": "economic-classification:generic:level7:code:full",
+            "slug": "ECON7",
+            "title": "Regl\u00f3n",
+            "type": "string"
+          },
+          {
+            "conceptType": "fin-source",
+            "format": "default",
+            "name": "SOURCE_FN1",
+            "osType": "fin-source:generic:level1:code",
+            "slug": "SOURCE_FN1",
+            "title": "Fuente agregada de financiamiento",
+            "type": "string"
+          },
+          {
+            "conceptType": "fin-source",
+            "format": "default",
+            "name": "SOURCE_FN2",
+            "osType": "fin-source:generic:level2:code:full",
+            "slug": "SOURCE_FN2",
+            "title": "Fuente de financiamiento",
+            "type": "string"
+          },
+          {
+            "conceptType": "fin-source",
+            "format": "default",
+            "name": "SOURCE_FN3",
+            "osType": "fin-source:generic:level3:code:full",
+            "slug": "SOURCE_FN3",
+            "title": "Organismo",
+            "type": "string"
+          },
+          {
+            "conceptType": "activity",
+            "format": "default",
+            "name": "PROGRAM1",
+            "osType": "activity:generic:program:code",
+            "slug": "PROGRAM1",
+            "title": "Programa",
+            "type": "string"
+          },
+          {
+            "conceptType": "activity",
+            "format": "default",
+            "name": "PROGRAM2",
+            "osType": "activity:generic:subprogram:code:full",
+            "slug": "PROGRAM2",
+            "title": "Sub-Programa",
+            "type": "string"
+          },
+          {
+            "conceptType": "activity",
+            "format": "default",
+            "name": "PROJECT1",
+            "osType": "activity:generic:project:code:full",
+            "slug": "PROJECT1",
+            "title": "Proyecto",
+            "type": "string"
+          },
+          {
+            "conceptType": "activity",
+            "format": "default",
+            "name": "PROJECT2",
+            "osType": "activity:generic:subproject:code:full",
+            "slug": "PROJECT2",
+            "title": "Actividad Obra",
+            "type": "string"
+          },
+          {
+            "conceptType": "phase",
+            "format": "default",
+            "name": "PHASE",
+            "osType": "phase:label",
+            "slug": "PHASE",
+            "title": "PHASE",
+            "type": "string"
+          },
+          {
+            "conceptType": "phase",
+            "format": "default",
+            "name": "PHASE_ID",
+            "osType": "phase:id",
+            "slug": "PHASE_ID",
+            "title": "PHASE_ID",
+            "type": "string"
+          },
+          {
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "value",
+            "osType": "value",
+            "slug": "value",
+            "title": "value",
+            "type": "number"
+          },
+          {
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "value_USD",
+            "osType": "value",
+            "slug": "value_USD",
+            "title": "value (USD)",
+            "type": "number"
+          }
+        ],
+        "primaryKey": [
+          "YEAR",
+          "ADMIN1",
+          "ADMIN2",
+          "ADMIN3",
+          "GEO1",
+          "GEO2",
+          "FUNC1",
+          "FUNC2",
+          "FUNC3",
+          "ECON1",
+          "ECON2",
+          "ECON3",
+          "ECON4",
+          "ECON5",
+          "ECON6",
+          "ECON7",
+          "SOURCE_FN1",
+          "SOURCE_FN2",
+          "SOURCE_FN3",
+          "PROGRAM1",
+          "PROGRAM2",
+          "PROJECT1",
+          "PROJECT2",
+          "PHASE_ID"
+        ]
+      },
+      "profile": "data-resource"
+    },
+    {
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false,
+        "escapeChar": "\\",
+        "header": true,
+        "caseSensitiveHeader": false
+      },
+      "dpp:streaming": true,
+      "encoding": "utf-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "conceptType": "date",
+            "format": "default",
+            "name": "YEAR",
+            "osType": "date:fiscal-year",
+            "slug": "YEAR",
+            "title": "YEAR",
+            "type": "integer"
+          },
+          {
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "ADMIN1",
+            "osType": "administrative-classification:generic:level1:code",
+            "slug": "ADMIN1",
+            "title": "Gobierno Central",
+            "type": "string"
+          },
+          {
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "ADMIN2",
+            "osType": "administrative-classification:generic:level2:code:full",
+            "slug": "ADMIN2",
+            "title": "Entidad",
+            "type": "string"
+          },
+          {
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "ADMIN3",
+            "osType": "administrative-classification:generic:level3:code:full",
+            "slug": "ADMIN3",
+            "title": "Unidad Ejecutora",
+            "type": "string"
+          },
+          {
+            "conceptType": "geo-source",
+            "format": "default",
+            "name": "GEO1",
+            "osType": "geo-source:target:level1:code",
+            "slug": "GEO1",
+            "title": "Departamento",
+            "type": "string"
+          },
+          {
+            "conceptType": "geo-source",
+            "format": "default",
+            "name": "GEO2",
+            "osType": "geo-source:target:level2:code:full",
+            "slug": "GEO2",
+            "title": "Municipio",
+            "type": "string"
+          },
+          {
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "FUNC1",
+            "osType": "functional-classification:generic:level1:code",
+            "slug": "FUNC1",
+            "title": "Finalidad",
+            "type": "string"
+          },
+          {
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "FUNC2",
+            "osType": "functional-classification:generic:level2:code:full",
+            "slug": "FUNC2",
+            "title": "Funci\u00f3n",
+            "type": "string"
+          },
+          {
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "FUNC3",
+            "osType": "functional-classification:generic:level3:code:full",
+            "slug": "FUNC3",
+            "title": "Divisi\u00f3n",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON1",
+            "osType": "economic-classification:generic:level1:code",
+            "slug": "ECON1",
+            "title": "Nivel 2: Econ\u00f3mico",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON2",
+            "osType": "economic-classification:generic:level2:code:full",
+            "slug": "ECON2",
+            "title": "Nivel 3: Econ\u00f3mico",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON3",
+            "osType": "economic-classification:generic:level3:code:full",
+            "slug": "ECON3",
+            "title": "Nivel 4: Econ\u00f3mico",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON4",
+            "osType": "economic-classification:generic:level4:code:full",
+            "slug": "ECON4",
+            "title": "Nivel 5: Econ\u00f3mico",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON5",
+            "osType": "economic-classification:generic:level5:code:full",
+            "slug": "ECON5",
+            "title": "Grupo",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON6",
+            "osType": "economic-classification:generic:level6:code:full",
+            "slug": "ECON6",
+            "title": "Sub-grupo",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON7",
+            "osType": "economic-classification:generic:level7:code:full",
+            "slug": "ECON7",
+            "title": "Regl\u00f3n",
+            "type": "string"
+          },
+          {
+            "conceptType": "fin-source",
+            "format": "default",
+            "name": "SOURCE_FN1",
+            "osType": "fin-source:generic:level1:code",
+            "slug": "SOURCE_FN1",
+            "title": "Fuente agregada de financiamiento",
+            "type": "string"
+          },
+          {
+            "conceptType": "fin-source",
+            "format": "default",
+            "name": "SOURCE_FN2",
+            "osType": "fin-source:generic:level2:code:full",
+            "slug": "SOURCE_FN2",
+            "title": "Fuente de financiamiento",
+            "type": "string"
+          },
+          {
+            "conceptType": "fin-source",
+            "format": "default",
+            "name": "SOURCE_FN3",
+            "osType": "fin-source:generic:level3:code:full",
+            "slug": "SOURCE_FN3",
+            "title": "Organismo",
+            "type": "string"
+          },
+          {
+            "conceptType": "activity",
+            "format": "default",
+            "name": "PROGRAM1",
+            "osType": "activity:generic:program:code",
+            "slug": "PROGRAM1",
+            "title": "Programa",
+            "type": "string"
+          },
+          {
+            "conceptType": "activity",
+            "format": "default",
+            "name": "PROGRAM2",
+            "osType": "activity:generic:subprogram:code:full",
+            "slug": "PROGRAM2",
+            "title": "Sub-Programa",
+            "type": "string"
+          },
+          {
+            "conceptType": "activity",
+            "format": "default",
+            "name": "PROJECT1",
+            "osType": "activity:generic:project:code:full",
+            "slug": "PROJECT1",
+            "title": "Proyecto",
+            "type": "string"
+          },
+          {
+            "conceptType": "activity",
+            "format": "default",
+            "name": "PROJECT2",
+            "osType": "activity:generic:subproject:code:full",
+            "slug": "PROJECT2",
+            "title": "Actividad Obra",
+            "type": "string"
+          },
+          {
+            "conceptType": "phase",
+            "format": "default",
+            "name": "PHASE",
+            "osType": "phase:label",
+            "slug": "PHASE",
+            "title": "PHASE",
+            "type": "string"
+          },
+          {
+            "conceptType": "phase",
+            "format": "default",
+            "name": "PHASE_ID",
+            "osType": "phase:id",
+            "slug": "PHASE_ID",
+            "title": "PHASE_ID",
+            "type": "string"
+          },
+          {
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "value",
+            "osType": "value",
+            "slug": "value",
+            "title": "value",
+            "type": "number"
+          },
+          {
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "value_USD",
+            "osType": "value",
+            "slug": "value_USD",
+            "title": "value (USD)",
+            "type": "number"
+          }
+        ],
+        "primaryKey": [
+          "YEAR",
+          "ADMIN1",
+          "ADMIN2",
+          "ADMIN3",
+          "GEO1",
+          "GEO2",
+          "FUNC1",
+          "FUNC2",
+          "FUNC3",
+          "ECON1",
+          "ECON2",
+          "ECON3",
+          "ECON4",
+          "ECON5",
+          "ECON6",
+          "ECON7",
+          "SOURCE_FN1",
+          "SOURCE_FN2",
+          "SOURCE_FN3",
+          "PROGRAM1",
+          "PROGRAM2",
+          "PROJECT1",
+          "PROJECT2",
+          "PHASE_ID"
+        ],
+        "missingValues": [""]
+      },
+      "profile": "tabular-data-resource",
+      "name": "2015",
+      "path": "https://storage.openspending.org/2015.csv",
+      "count_of_rows": 752260
+    },
+    {
+      "dialect": {
+        "delimiter": ",",
+        "doubleQuote": true,
+        "lineTerminator": "\r\n",
+        "quoteChar": "\"",
+        "skipInitialSpace": false,
+        "escapeChar": "\\",
+        "header": true,
+        "caseSensitiveHeader": false
+      },
+      "dpp:streaming": true,
+      "encoding": "utf-8",
+      "format": "csv",
+      "mediatype": "text/csv",
+      "schema": {
+        "fields": [
+          {
+            "conceptType": "date",
+            "format": "default",
+            "name": "YEAR",
+            "osType": "date:fiscal-year",
+            "slug": "YEAR",
+            "title": "YEAR",
+            "type": "integer"
+          },
+          {
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "ADMIN1",
+            "osType": "administrative-classification:generic:level1:code",
+            "slug": "ADMIN1",
+            "title": "Gobierno Central",
+            "type": "string"
+          },
+          {
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "ADMIN2",
+            "osType": "administrative-classification:generic:level2:code:full",
+            "slug": "ADMIN2",
+            "title": "Entidad",
+            "type": "string"
+          },
+          {
+            "conceptType": "administrative-classification",
+            "format": "default",
+            "name": "ADMIN3",
+            "osType": "administrative-classification:generic:level3:code:full",
+            "slug": "ADMIN3",
+            "title": "Unidad Ejecutora",
+            "type": "string"
+          },
+          {
+            "conceptType": "geo-source",
+            "format": "default",
+            "name": "GEO1",
+            "osType": "geo-source:target:level1:code",
+            "slug": "GEO1",
+            "title": "Departamento",
+            "type": "string"
+          },
+          {
+            "conceptType": "geo-source",
+            "format": "default",
+            "name": "GEO2",
+            "osType": "geo-source:target:level2:code:full",
+            "slug": "GEO2",
+            "title": "Municipio",
+            "type": "string"
+          },
+          {
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "FUNC1",
+            "osType": "functional-classification:generic:level1:code",
+            "slug": "FUNC1",
+            "title": "Finalidad",
+            "type": "string"
+          },
+          {
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "FUNC2",
+            "osType": "functional-classification:generic:level2:code:full",
+            "slug": "FUNC2",
+            "title": "Funci\u00f3n",
+            "type": "string"
+          },
+          {
+            "conceptType": "functional-classification",
+            "format": "default",
+            "name": "FUNC3",
+            "osType": "functional-classification:generic:level3:code:full",
+            "slug": "FUNC3",
+            "title": "Divisi\u00f3n",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON1",
+            "osType": "economic-classification:generic:level1:code",
+            "slug": "ECON1",
+            "title": "Nivel 2: Econ\u00f3mico",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON2",
+            "osType": "economic-classification:generic:level2:code:full",
+            "slug": "ECON2",
+            "title": "Nivel 3: Econ\u00f3mico",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON3",
+            "osType": "economic-classification:generic:level3:code:full",
+            "slug": "ECON3",
+            "title": "Nivel 4: Econ\u00f3mico",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON4",
+            "osType": "economic-classification:generic:level4:code:full",
+            "slug": "ECON4",
+            "title": "Nivel 5: Econ\u00f3mico",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON5",
+            "osType": "economic-classification:generic:level5:code:full",
+            "slug": "ECON5",
+            "title": "Grupo",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON6",
+            "osType": "economic-classification:generic:level6:code:full",
+            "slug": "ECON6",
+            "title": "Sub-grupo",
+            "type": "string"
+          },
+          {
+            "conceptType": "economic-classification",
+            "format": "default",
+            "name": "ECON7",
+            "osType": "economic-classification:generic:level7:code:full",
+            "slug": "ECON7",
+            "title": "Regl\u00f3n",
+            "type": "string"
+          },
+          {
+            "conceptType": "fin-source",
+            "format": "default",
+            "name": "SOURCE_FN1",
+            "osType": "fin-source:generic:level1:code",
+            "slug": "SOURCE_FN1",
+            "title": "Fuente agregada de financiamiento",
+            "type": "string"
+          },
+          {
+            "conceptType": "fin-source",
+            "format": "default",
+            "name": "SOURCE_FN2",
+            "osType": "fin-source:generic:level2:code:full",
+            "slug": "SOURCE_FN2",
+            "title": "Fuente de financiamiento",
+            "type": "string"
+          },
+          {
+            "conceptType": "fin-source",
+            "format": "default",
+            "name": "SOURCE_FN3",
+            "osType": "fin-source:generic:level3:code:full",
+            "slug": "SOURCE_FN3",
+            "title": "Organismo",
+            "type": "string"
+          },
+          {
+            "conceptType": "activity",
+            "format": "default",
+            "name": "PROGRAM1",
+            "osType": "activity:generic:program:code",
+            "slug": "PROGRAM1",
+            "title": "Programa",
+            "type": "string"
+          },
+          {
+            "conceptType": "activity",
+            "format": "default",
+            "name": "PROGRAM2",
+            "osType": "activity:generic:subprogram:code:full",
+            "slug": "PROGRAM2",
+            "title": "Sub-Programa",
+            "type": "string"
+          },
+          {
+            "conceptType": "activity",
+            "format": "default",
+            "name": "PROJECT1",
+            "osType": "activity:generic:project:code:full",
+            "slug": "PROJECT1",
+            "title": "Proyecto",
+            "type": "string"
+          },
+          {
+            "conceptType": "activity",
+            "format": "default",
+            "name": "PROJECT2",
+            "osType": "activity:generic:subproject:code:full",
+            "slug": "PROJECT2",
+            "title": "Actividad Obra",
+            "type": "string"
+          },
+          {
+            "conceptType": "phase",
+            "format": "default",
+            "name": "PHASE",
+            "osType": "phase:label",
+            "slug": "PHASE",
+            "title": "PHASE",
+            "type": "string"
+          },
+          {
+            "conceptType": "phase",
+            "format": "default",
+            "name": "PHASE_ID",
+            "osType": "phase:id",
+            "slug": "PHASE_ID",
+            "title": "PHASE_ID",
+            "type": "string"
+          },
+          {
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "value",
+            "osType": "value",
+            "slug": "value",
+            "title": "value",
+            "type": "number"
+          },
+          {
+            "conceptType": "value",
+            "decimalChar": ".",
+            "format": "default",
+            "groupChar": "",
+            "name": "value_USD",
+            "osType": "value",
+            "slug": "value_USD",
+            "title": "value (USD)",
+            "type": "number"
+          }
+        ],
+        "primaryKey": [
+          "YEAR",
+          "ADMIN1",
+          "ADMIN2",
+          "ADMIN3",
+          "GEO1",
+          "GEO2",
+          "FUNC1",
+          "FUNC2",
+          "FUNC3",
+          "ECON1",
+          "ECON2",
+          "ECON3",
+          "ECON4",
+          "ECON5",
+          "ECON6",
+          "ECON7",
+          "SOURCE_FN1",
+          "SOURCE_FN2",
+          "SOURCE_FN3",
+          "PROGRAM1",
+          "PROGRAM2",
+          "PROJECT1",
+          "PROJECT2",
+          "PHASE_ID"
+        ],
+        "missingValues": [""]
+      },
+      "profile": "tabular-data-resource",
+      "name": "2014",
+      "path": "https://storage.openspending.org/2014.csv",
+      "count_of_rows": 794185
+    }
+  ],
+  "title": "BOOST Guatemala Central",
+  "profile": "data-package",
+  "author": "OpenSpending",
+  "owner": "6018ab87076187018fc29c94a68a3cd2"
+}
