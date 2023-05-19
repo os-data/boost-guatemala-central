@@ -217,7 +217,7 @@
       "hash": "817a8889f5bb72658fbb36dbfc997977",
       "mediatype": "text/csv",
       "name": "boost-guatemala-central",
-      "path": "https://storage.openspending.org/boost-guatemala-central.csv",
+      "path": "https://storage.openspending.org/boost-guatemala-central/boost-guatemala-central.csv",
       "schema": {
         "fields": [
           {
@@ -792,7 +792,7 @@
       },
       "profile": "tabular-data-resource",
       "name": "2015",
-      "path": "https://storage.openspending.org/2015.csv",
+      "path": "https://storage.openspending.org/boost-guatemala-central/2015.csv",
       "count_of_rows": 752260
     },
     {
@@ -1090,7 +1090,7 @@
       },
       "profile": "tabular-data-resource",
       "name": "2014",
-      "path": "https://storage.openspending.org/2014.csv",
+      "path": "https://storage.openspending.org/boost-guatemala-central/2014.csv",
       "count_of_rows": 794185
     }
   ],
