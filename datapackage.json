@@ -217,6 +217,11 @@
       "hash": "817a8889f5bb72658fbb36dbfc997977",
       "mediatype": "text/csv",
       "name": "boost-guatemala-central",
+      "countryCode": "GT",
+      "fiscalPeriod": {
+        "start": "2014-01-01",
+        "end": "2015-12-31"
+      },
       "path": "https://storage.openspending.org/boost-guatemala-central/boost-guatemala-central.csv",
       "schema": {
         "fields": [
