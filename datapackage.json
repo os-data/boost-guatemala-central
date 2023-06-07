@@ -3,6 +3,11 @@
   "bytes": 1082465890,
   "count_of_rows": 1546445,
   "hash": "d1fff7e7143abca63b514f9002df0bef",
+  "countryCode": "GT",
+   "fiscalPeriod": {
+    "start": "2014-01-01",
+    "end": "2015-12-31"
+  },
   "model": {
     "dimensions": {
       "activity": {
